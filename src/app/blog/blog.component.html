@@ -1,0 +1,37 @@
+<div class="grupo form_group">
+  <input
+    type="text"
+    placeholder="Introduce una categoria"
+    (keyup)="manejarCategoria($event)"
+  />
+
+  <select (change)="manejarCampoTexto($event)">
+    <option value="todos">Todos</option>
+    <option value="noticias">Noticias</option>
+    <option value="tecnologia">Tecnología</option>
+    <option value="zombies">Zombies</option>
+  </select>
+</div>
+
+<div>
+  <ul class="row">
+    <div class="onePost" *ngFor="let post of arrTodosLosPosts">
+      <li
+        id="{{ post.id }}"
+        class="{{ post.categoria }}"
+        [routerLink]="['/detalle-post', post.id]"
+      >
+        {{ post.titulo }}
+        <p>{{ post.texto }}</p>
+        <p>{{ post.autor }}</p>
+        <p>{{ post.fecha }}</p>
+        <img src="{{ post.imagen }}" alt="{{ post.titulo }}" />
+        <p>{{ post.categoria }}</p>
+      </li>
+
+      <a href="#" class="btn btn-danger" (click)="manejarBorrado(post)"
+        >Eliminar Post</a
+      >
+    </div>
+  </ul>
+</div>

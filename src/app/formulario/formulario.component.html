@@ -1,0 +1,27 @@
+<h2>Formulario de la muerte</h2>
+
+<form>
+  <label for="">Titulo</label>
+  <input type="text" placeholder="Introduce el titulo" />
+
+  <label for="">Texto</label>
+  <input type="text" placeholder="Introduce el texto" />
+
+  <label for="">Autor</label>
+  <input type="text" placeholder="Introduce al autor" />
+
+  <label for="">Imagen</label>
+  <input type="text" placeholder="Introduce la URL" />
+
+  <label for="">Fecha</label>
+  <input type="text" placeholder="Introduce la fecha" />
+
+  <label for="">Categoría</label>
+  <select name="" id="">
+    <option value="noticias">Noticias</option>
+    <option value="tecnologia">Tecnología</option>
+    <option value="zombies">Zombies</option>
+  </select>
+
+  <button (click)="manejarClick($event)">Agregar Post</button>
+</form>

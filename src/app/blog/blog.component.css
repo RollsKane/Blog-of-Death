@@ -1,0 +1,8 @@
+.onePost {
+  border: 1px solid red;
+  width: 20em;
+}
+
+.onePost:hover {
+  background-color: red;
+}

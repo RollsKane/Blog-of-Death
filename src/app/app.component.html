@@ -1,0 +1,18 @@
+<header class="col-12">
+  <h1>Blog of Death</h1>
+</header>
+
+<div class="row">
+  <div id="mySidenav" class="col-3">
+    <nav>
+      <ul>
+        <li><a [routerLink]="['blog']">Blog</a></li>
+        <li><a [routerLink]="['new']">New Post</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="main" class="col-7">
+    <router-outlet></router-outlet>
+  </div>
+</div>
