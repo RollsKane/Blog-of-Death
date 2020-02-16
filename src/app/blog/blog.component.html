@@ -36,9 +36,17 @@
         <p class="cat">categoría: {{ post.categoria }}</p>
       </li>
 
-      <a href="#" class="btn btn-danger" (click)="manejarBorrado(post)"
-        >Eliminar Post</a
-      >
+      <div class="row col-12">
+        <a
+          href="#"
+          class="btn btn-primary"
+          [routerLink]="['/detalle-post', post.id]"
+          >Leer Post</a
+        >
+        <a href="#" class="btn btn-danger" (click)="manejarBorrado(post)"
+          >Eliminar Post</a
+        >
+      </div>
     </div>
   </ul>
 </div>

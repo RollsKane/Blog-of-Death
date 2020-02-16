@@ -6,10 +6,15 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BlogComponent } from "./blog/blog.component";
 import { FormularioComponent } from "./formulario/formulario.component";
-import { DetallePostComponent } from './detalle-post/detalle-post.component';
+import { DetallePostComponent } from "./detalle-post/detalle-post.component";
 
 @NgModule({
-  declarations: [AppComponent, BlogComponent, FormularioComponent, DetallePostComponent],
+  declarations: [
+    AppComponent,
+    BlogComponent,
+    FormularioComponent,
+    DetallePostComponent
+  ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { SuperServicioService } from "../super-servicio.service";
 import { Router } from "@angular/router";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-formulario",
@@ -19,6 +20,12 @@ export class FormularioComponent implements OnInit {
   manejarClick($event) {
     console.log($event);
   }
+
+  /*
+  onSubmit(formValues) {
+    console.log(formValues);
+  }
+  */
 
   /*
   async manejarClick($event) {

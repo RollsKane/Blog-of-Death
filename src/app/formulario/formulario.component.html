@@ -1,4 +1,6 @@
-<h2>Formulario de la muerte</h2>
+<h2 #formularito="ngForm" (ngSubmit)="onSubmit(formularito.value)">
+  Formulario de la muerte
+</h2>
 
 <form>
   <label for="">Titulo</label>

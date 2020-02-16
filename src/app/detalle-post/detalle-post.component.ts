@@ -25,5 +25,14 @@ export class DetallePostComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.activateRoute.params.subscribe(async params => {
+      console.log(params);
+      this.idPost = await this.superServicio.getByIdPromise(
+        parseInt(params.id)
+      );
+      // Devuelve los parametros variables de la url
+      console.log(this.idPost);
+    });
+  }
 }

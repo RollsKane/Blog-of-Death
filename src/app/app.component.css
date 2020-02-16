@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.total {
-  background-image: url(../assets/img/bg.gif);
-}
-
 h1 {
   width: 100%;
   padding: 10px;

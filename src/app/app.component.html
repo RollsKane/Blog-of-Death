@@ -1,22 +1,24 @@
-<header class="col-12">
-  <div class="cabecera">
-    <img class="s skull" src="../assets/img/skull.png" alt="Skull" />
-    <h1 class="s">Blog of Death</h1>
-    <img class="s skull" src="../assets/img/skull.png" alt="Skull" />
-  </div>
-</header>
+<div class="total">
+  <header class="col-12">
+    <div class="cabecera">
+      <img class="s skull" src="../assets/img/skull.png" alt="Skull" />
+      <h1 class="s">Blog of Death</h1>
+      <img class="s skull" src="../assets/img/skull.png" alt="Skull" />
+    </div>
+  </header>
 
-<div class="row">
-  <div id="mySidenav" class="col-2">
-    <nav>
-      <ul>
-        <li><a [routerLink]="['blog']">Blog</a></li>
-        <li><a [routerLink]="['new']">New Post</a></li>
-      </ul>
-    </nav>
-  </div>
+  <div class="row">
+    <div id="mySidenav" class="col-2">
+      <nav>
+        <ul>
+          <li [routerLink]="['blog']"><a [routerLink]="['blog']">Blog</a></li>
+          <li [routerLink]="['new']"><a [routerLink]="['new']">New Post</a></li>
+        </ul>
+      </nav>
+    </div>
 
-  <div id="main" class="col-10">
-    <router-outlet></router-outlet>
+    <div id="main" class="col-10">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

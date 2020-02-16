@@ -4,11 +4,14 @@
 
 .grupo {
   text-align: center;
-  margin: 10px;
+  background-image: url(../../assets/img/waterfall.gif);
+  background-position: 10rem;
 }
 
 label {
   margin: 10px;
+  color: white;
+  font-weight: 700;
 }
 
 input {
@@ -22,7 +25,8 @@ input {
 
 .onePost:hover {
   background-color: red;
-  scale: 120%;
+  /* scale: 120px;
+  rotate: 20deg; */
   overflow: hidden;
   transition: 1s;
 }
@@ -32,12 +36,7 @@ img {
   border: 3px solid orangered;
   border-radius: 20%;
   display: block;
-}
-
-img:hover {
-  scale: 120%;
-  transition: 2s;
-  overflow: hidden;
+  margin-left: 2rem;
 }
 
 li {
@@ -60,4 +59,8 @@ h4 {
 
 .cat {
   margin-left: 20%;
+}
+
+.btn {
+  margin: 1em;
 }
