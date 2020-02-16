@@ -195,6 +195,24 @@ export class SuperServicioService {
     return prom;
   }
 
+  getByTitle(pTitle: string): Promise<Post[]> {
+    const prom = new Promise<Post[]>((resolve, reject) => {
+      const arrFiltrado = this.arrPosts.filter(item => {
+        // Filtro en minusculas, sin espacio
+        const tituloCompleto = this.eliminarDiacriticos(
+          this.eliminarEspacios(item.categoria)
+        );
+        const pTituloNew = this.eliminarDiacriticos(
+          this.eliminarEspacios(pTitle)
+        );
+
+        return tituloCompleto.toLowerCase().includes(pTituloNew.toLowerCase());
+      });
+      resolve(arrFiltrado);
+    });
+    return prom;
+  }
+
   eliminarEspacios(pCadena: string): string {
     const regex = / /gi; // reemplazar espacios con una expresión regular
     // "g" es global e "i" es insensitive (que le dan igual mayusculas o minusculas)
@@ -206,12 +224,12 @@ export class SuperServicioService {
     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
 
-  getByTitle(pTitle: string): Promise<Post[]> {
+  getByTitul(pTitle: string): Promise<Post[]> {
     const prom = new Promise<Post[]>((resolve, reject) => {
       const arrFiltrado = this.arrPosts.filter(item => {
         // Filtro en minusculas, sin espacio
         const TituloCompleto = this.eliminarDiacriticos(
-          this.eliminarEspacios(item.categoria)
+          this.eliminarEspacios(item.titulo)
         );
         const pTituloNew = this.eliminarDiacriticos(
           this.eliminarEspacios(pTitle)

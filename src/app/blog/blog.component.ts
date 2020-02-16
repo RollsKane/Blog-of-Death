@@ -38,6 +38,17 @@ export class BlogComponent implements OnInit {
       });
   }
 
+  manejarTitulo($event) {
+    this.arrTodosLosPosts = [];
+    this.superServicioService
+      .getByTitul($event.target.value)
+      // tslint:disable-next-line: no-shadowed-variable
+      .then(arrPosts => {
+        this.arrTodosLosPosts = arrPosts;
+        //console.log(arrTodosLosPosts);
+      });
+  }
+
   manejarCampoTexto($event) {
     this.arrTodosLosPosts = [];
 

@@ -2,6 +2,12 @@
   <label for="">Busca por título</label>
   <input
     type="text"
+    placeholder="Introduce un título"
+    (keyup)="manejarTitulo($event)"
+  />
+  <label for="">Busca por categoría</label>
+  <input
+    type="text"
     placeholder="Introduce una categoria"
     (keyup)="manejarCategoria($event)"
   />

@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter } from "@angular/core";
 import { SuperServicioService } from "../super-servicio.service";
 import { Router } from "@angular/router";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { Post } from "../models/Post";
 
 @Component({
   selector: "app-formulario",
@@ -16,6 +17,8 @@ export class FormularioComponent implements OnInit {
 
   imagenURL: string;
   urlEnviada: EventEmitter<string>;
+
+  postNuevo: Post;
 
   constructor(
     private superServicioService: SuperServicioService,
@@ -51,26 +54,25 @@ export class FormularioComponent implements OnInit {
     this.imagenURL = "";
 
     this.urlEnviada = new EventEmitter();
+
+    this.postNuevo = new Post("", "", "", "", "", "");
   }
 
   ngOnInit() {}
 
-  manejarClick($event) {
-    console.log($event);
-    // tslint:disable-next-line: no-shadowed-variable
-    this.superServicioService.agregarPost($event);
-  }
-
-  onSubmit() {
-    console.log(this.formulario.value);
+  onSubmit($event) {
+    this.postNuevo = this.formulario.value;
+    console.log(this.postNuevo);
     this.formularioEnviado = true;
+    this.superServicioService.agregarPost(this.postNuevo);
   }
 
-  emitTarea($event) {
-    console.log($event.target.value);
+  emitPost($event) {
+    // console.log($event.target.value);
 
     this.imagenURL = $event.target.value;
     this.urlEnviada.emit(this.imagenURL);
+    //this.superServicioService.agregarPost($event);
   }
 
   mostrarImagen() {

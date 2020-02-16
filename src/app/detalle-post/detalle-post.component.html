@@ -11,5 +11,11 @@
         <p class="card-text">{{ idPost?.categoria }}</p>
       </div>
     </div>
+    <div class="row col-12">
+      <a href="#" class="btn btn-primary" [routerLink]="['/blog']">Volver</a>
+      <a href="#" class="btn btn-danger" (click)="manejarBorrado(idPost)"
+        >Eliminar Post</a
+      >
+    </div>
   </div>
 </div>

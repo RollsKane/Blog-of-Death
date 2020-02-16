@@ -57,3 +57,10 @@ h1 {
 header {
   background-color: black;
 }
+
+li.imagen {
+  height: 200px;
+}
+li.imagen img {
+  height: 200px;
+}

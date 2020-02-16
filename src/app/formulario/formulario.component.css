@@ -1,12 +1,23 @@
+* {
+  overflow: hidden;
+}
+
 .ar {
-  background-color: teal;
+  background-color: rgba(0, 0, 0, 0.575);
   display: inline;
-  margin: 0 5px;
-  padding: 5px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5%;
 }
 
 form {
   display: inline;
+}
+
+label {
+  color: white;
+  font-weight: 400;
+  margin: 20px;
 }
 
 .errors {
@@ -27,4 +38,31 @@ form {
   margin-top: 20%;
   margin-bottom: 20%;
   text-align: center;
+}
+
+.all {
+  background-image: url(../../assets/img/night.webp);
+  background-size: 70%;
+  background-position: -25px 800px;
+}
+
+.uno {
+  background-color: rgba(0, 0, 0, 0.575);
+  border-radius: 5%;
+}
+
+div.tit {
+  background-image: url(../../assets/img/waterfall.gif);
+  background-position: 10rem;
+}
+
+h2 {
+  text-align: center;
+
+  color: white;
+  margin: 20px;
+}
+
+button {
+  margin: 2em;
 }

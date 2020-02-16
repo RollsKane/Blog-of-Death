@@ -11,6 +11,8 @@ import { SuperServicioService } from "../super-servicio.service";
 export class DetallePostComponent implements OnInit {
   idPost: Post;
 
+  arrTodosLosPosts: Post[];
+
   constructor(
     private activateRoute: ActivatedRoute,
     private superServicio: SuperServicioService
@@ -23,6 +25,7 @@ export class DetallePostComponent implements OnInit {
       // Devuelve los parametros variables de la url
       console.log(this.idPost);
     });
+    this.arrTodosLosPosts = [];
   }
 
   ngOnInit() {
@@ -34,5 +37,13 @@ export class DetallePostComponent implements OnInit {
       // Devuelve los parametros variables de la url
       console.log(this.idPost);
     });
+  }
+
+  manejarBorrado($event) {
+    this.arrTodosLosPosts = [];
+    this.superServicio.muertePost($event);
+    // tslint:disable-next-line: no-shadowed-variable
+    /*.then(arrPosts => {
+        this.arrTodosLosPosts = arrPosts;*/
   }
 }

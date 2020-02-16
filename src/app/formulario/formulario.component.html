@@ -1,9 +1,15 @@
-<h2>
-  Formulario de la muerte
-</h2>
+<div class="tit">
+  <h2>
+    Formulario de la muerte
+  </h2>
+</div>
 
-<div class="row">
-  <form class="col-8" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+<div class="container all row col-12">
+  <form
+    class="col-6 uno"
+    [formGroup]="formulario"
+    (ngSubmit)="onSubmit($event)"
+  >
     <div class="form-group">
       <label for="">Titulo</label>
       <input
@@ -125,7 +131,7 @@
         class="form-control"
         formControlName="imagen"
         placeholder="Introduce la URL"
-        (keyup)="emitTarea($event)"
+        (keyup)="emitPost($event)"
       />
 
       <p
@@ -160,11 +166,17 @@
         <option value="magia-negra">Magia Negra</option>
       </select>
 
-      <button (click)="manejarClick($event)">Agregar Post</button>
+      <button class="btn btn-danger">
+        Agregar Post
+      </button>
     </div>
   </form>
 
   <div class="ar col-3">
-    <img class="imagenloca" [src]="mostrarImagen()" alt="Imagen" />
+    <img
+      class="imagenloca"
+      [src]="mostrarImagen()"
+      alt="La imágen se mostrará cuando escribas la URL"
+    />
   </div>
 </div>
