@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Cargando fuentes */
+
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P|Share+Tech&display=swap");
+
+/* FUENTES */
+/*
+font-family: 'Share Tech', sans-serif;
+font-family: 'Press Start 2P', cursive;
+*/
+
+body {
+  font-family: "Share Tech", sans-serif;
+  font-size: 1em;
+}

@@ -1,9 +1,13 @@
 <header class="col-12">
-  <h1>Blog of Death</h1>
+  <div class="cabecera">
+    <img class="s skull" src="../assets/img/skull.png" alt="Skull" />
+    <h1 class="s">Blog of Death</h1>
+    <img class="s skull" src="../assets/img/skull.png" alt="Skull" />
+  </div>
 </header>
 
 <div class="row">
-  <div id="mySidenav" class="col-3">
+  <div id="mySidenav" class="col-2">
     <nav>
       <ul>
         <li><a [routerLink]="['blog']">Blog</a></li>
@@ -12,7 +16,7 @@
     </nav>
   </div>
 
-  <div id="main" class="col-7">
+  <div id="main" class="col-10">
     <router-outlet></router-outlet>
   </div>
 </div>

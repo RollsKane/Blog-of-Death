@@ -4,15 +4,60 @@
   box-sizing: border-box;
 }
 
+.total {
+  background-image: url(../assets/img/bg.gif);
+}
+
 h1 {
   width: 100%;
   padding: 10px;
-  background-color: black;
   color: white;
   text-align: center;
+  margin: 0 20%;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
 }
 
 #mySidenav {
   margin-left: 0;
-  background-image: url(../assets/img/bg.jpg);
+  background-image: url(../assets/img/stone.png);
+  font-family: "Press Start 2P", cursive;
+}
+
+#mySidenav li {
+  width: 100%;
+  list-style: none;
+  margin: 1rem 0;
+  border: 1px solid orangered;
+  background-color: rgba(0, 0, 0, 0.534);
+  padding: 10px;
+}
+
+#mySidenav li:hover {
+  background-color: orangered;
+}
+
+#mySidenav li a {
+  padding: 10px;
+  margin: 50px;
+  color: white;
+}
+
+.s {
+  display: inline;
+}
+
+.skull {
+  width: 150px;
+}
+
+.cabecera {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+header {
+  background-color: black;
 }

@@ -40,13 +40,17 @@ export class BlogComponent implements OnInit {
 
   manejarCampoTexto($event) {
     this.arrTodosLosPosts = [];
-    this.superServicioService
-      .getByCathegory($event.target.value)
-      // tslint:disable-next-line: no-shadowed-variable
-      .then(arrPosts => {
-        this.arrTodosLosPosts = arrPosts;
-        //console.log(arrTodosLosPosts);
-      });
+
+    if ($event.target.value == "todos") {
+    } else {
+      this.superServicioService
+        .getByCathegory($event.target.value)
+        // tslint:disable-next-line: no-shadowed-variable
+        .then(arrPosts => {
+          this.arrTodosLosPosts = arrPosts;
+          //console.log(arrTodosLosPosts);
+        });
+    }
   }
 
   manejarBorrado($event) {
