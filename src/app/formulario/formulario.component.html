@@ -1,29 +1,170 @@
-<h2 #formularito="ngForm" (ngSubmit)="onSubmit(formularito.value)">
+<h2>
   Formulario de la muerte
 </h2>
 
-<form>
-  <label for="">Titulo</label>
-  <input type="text" placeholder="Introduce el titulo" />
+<div class="row">
+  <form class="col-8" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="">Titulo</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="titulo"
+        placeholder="Introduce el titulo"
+      />
 
-  <label for="">Texto</label>
-  <input type="text" placeholder="Introduce el texto" />
+      <p
+        class="errors"
+        *ngIf="
+          formulario.controls.titulo.errors?.required &&
+          formulario.controls.titulo.touched
+        "
+      >
+        <!-- Si todo lo que va antes de la interrogación es null, el resto pasamos de ello -->
 
-  <label for="">Autor</label>
-  <input type="text" placeholder="Introduce al autor" />
+        ¡El campo titulo es requerido! ¡Mal!
+      </p>
 
-  <label for="">Imagen</label>
-  <input type="text" placeholder="Introduce la URL" />
+      <p
+        class="errors"
+        *ngIf="
+          formulario.controls.titulo.errors?.maxlength &&
+          formulario.controls.titulo.dirty
+        "
+      >
+        ¡El campo titulo debe tener una longitud máxima de
+        {{ formulario.controls.titulo.errors.maxlength.requiredLength }}
+        caracteres! ¡Mal! ¡Tú has introducido
+        {{ formulario.controls.titulo.errors.maxlength.actualLength }}
+        caracteres!
+      </p>
 
-  <label for="">Fecha</label>
-  <input type="text" placeholder="Introduce la fecha" />
+      <p
+        class="errors"
+        *ngIf="
+          formulario.controls.titulo.errors?.minlength &&
+          formulario.controls.titulo.dirty
+        "
+      >
+        ¡El campo titulo debe tener una longitud mínima de
+        {{ formulario.controls.titulo.errors.minlength.requiredLength }}
+        caracteres! ¡Mal! ¡Tú has introducido
+        {{ formulario.controls.titulo.errors.minlength.actualLength }}
+        caracteres!
+      </p>
 
-  <label for="">Categoría</label>
-  <select name="" id="">
-    <option value="noticias">Noticias</option>
-    <option value="tecnologia">Tecnología</option>
-    <option value="zombies">Zombies</option>
-  </select>
+      <label for="">Texto</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="texto"
+        placeholder="Introduce el texto"
+      />
 
-  <button (click)="manejarClick($event)">Agregar Post</button>
-</form>
+      <p
+        class="errors"
+        *ngIf="
+          formulario.controls.texto.errors?.required &&
+          formulario.controls.texto.touched
+        "
+      >
+        <!-- Si todo lo que va antes de la interrogación es null, el resto pasamos de ello -->
+
+        ¡El campo texto es requerido! ¡Mal!
+      </p>
+
+      <p
+        class="errors"
+        *ngIf="
+          formulario.controls.texto.errors?.maxlength &&
+          formulario.controls.texto.dirty
+        "
+      >
+        ¡El campo texto debe tener una longitud máxima de
+        {{ formulario.controls.texto.errors.maxlength.requiredLength }}
+        caracteres! ¡Mal! ¡Tú has introducido
+        {{ formulario.controls.texto.errors.maxlength.actualLength }}
+        caracteres!
+      </p>
+
+      <p
+        class="errors"
+        *ngIf="
+          formulario.controls.texto.errors?.minlength &&
+          formulario.controls.texto.dirty
+        "
+      >
+        ¡El campo texto debe tener una longitud mínima de
+        {{ formulario.controls.texto.errors.minlength.requiredLength }}
+        caracteres! ¡Mal! ¡Tú has introducido
+        {{ formulario.controls.texto.errors.minlength.actualLength }}
+        caracteres!
+      </p>
+
+      <label for="">Autor</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="autor"
+        placeholder="Introduce al autor"
+      />
+
+      <p
+        class="errors"
+        *ngIf="
+          formulario.controls.autor.errors?.required &&
+          formulario.controls.autor.dirty
+        "
+      >
+        ¡El campo autor es requerido! ¡Mal!
+      </p>
+
+      <label for="">Imagen</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="imagen"
+        placeholder="Introduce la URL"
+        (keyup)="emitTarea($event)"
+      />
+
+      <p
+        class="errors"
+        *ngIf="
+          formulario.controls.imagen.errors?.required &&
+          formulario.controls.imagen.dirty
+        "
+      >
+        ¡El campo imagen es requerido! ¡Mal!
+      </p>
+
+      <label for="">Fecha</label>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="fecha"
+        placeholder="Introduce la fecha"
+      />
+
+      <label for="">Categoría</label>
+      <select
+        name="categoria"
+        id=""
+        class="form-control"
+        formControlName="categoria"
+      >
+        <option value="combate">Combate</option>
+        <option value="tecnologia">Tecnología</option>
+        <option value="zombies">Zombies</option>
+        <option value="vida-salvaje">Vida Salvaje</option>
+        <option value="magia-negra">Magia Negra</option>
+      </select>
+
+      <button (click)="manejarClick($event)">Agregar Post</button>
+    </div>
+  </form>
+
+  <div class="ar col-3">
+    <img class="imagenloca" [src]="mostrarImagen()" alt="Imagen" />
+  </div>
+</div>

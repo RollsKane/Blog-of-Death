@@ -1,0 +1,30 @@
+.ar {
+  background-color: teal;
+  display: inline;
+  margin: 0 5px;
+  padding: 5px;
+}
+
+form {
+  display: inline;
+}
+
+.errors {
+  color: red;
+  font-weight: 700;
+  text-align: center;
+}
+
+.imagenloca {
+  width: 226px;
+  height: 223px;
+  background-color: white;
+  border: 2px solid orangered;
+  border-radius: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  text-align: center;
+}
