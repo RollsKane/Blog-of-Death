@@ -27,6 +27,7 @@ h1 {
   border: 1px solid orangered;
   background-color: rgba(0, 0, 0, 0.534);
   padding: 10px;
+  overflow: hidden;
 }
 
 #mySidenav li:hover {
@@ -41,17 +42,17 @@ h1 {
 
 .s {
   display: inline;
+  width: 100%;
 }
 
 .skull {
   width: 150px;
+  display: inline;
 }
 
 .cabecera {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  margin-left: 10%;
+  width: 100%;
 }
 
 header {
@@ -63,4 +64,33 @@ li.imagen {
 }
 li.imagen img {
   height: 200px;
+}
+
+span {
+  text-align: center;
+  padding: 0 35%;
+}
+
+/*******************************************************/
+/*********************MEDIA QUERIES*********************/
+/*******************************************************/
+
+/* Esta web está hecha en desktop-first */
+
+/* Primer Breakpoint */
+/* Tablet / Pantalla Pequeña */
+
+@media (min-width: 62.75em) {
+}
+
+/* Segundo Breakpoint */
+/* Mobil grande / Tablet pequeña */
+
+@media (min-width: 48.063em) {
+}
+
+/* Tercer Breakpoint */
+/* Movil */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
 }

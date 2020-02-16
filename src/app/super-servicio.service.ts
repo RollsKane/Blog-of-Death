@@ -30,7 +30,8 @@ export class SuperServicioService {
         imagen: "../assets/img/posts/dinosaur.png",
         fecha: "12/07/99",
         categoria: "vida-salvaje",
-        id: 100
+        id: 100,
+        icono: "fas fa-dragon"
       },
       {
         titulo: "Ataque de tiburon",
@@ -39,7 +40,8 @@ export class SuperServicioService {
         imagen: "../assets/img/posts/shark.png",
         fecha: "22/07/99",
         categoria: "vida-salvaje",
-        id: 101
+        id: 101,
+        icono: "fas fa-dragon"
       },
       {
         titulo: "Pánico en la ciudad",
@@ -48,7 +50,8 @@ export class SuperServicioService {
         imagen: "../assets/img/posts/city.png",
         fecha: "22/07/99",
         categoria: "zombies",
-        id: 102
+        id: 102,
+        icono: "fas fa-biohazard"
       },
       {
         titulo: "Nuevos Aeropatines",
@@ -57,7 +60,8 @@ export class SuperServicioService {
         imagen: "../assets/img/posts/aeropatin.png",
         fecha: "22/07/99",
         categoria: "tecnologia",
-        id: 103
+        id: 103,
+        icono: "fas fa-robot"
       },
       {
         titulo: "El capitán se confiesa",
@@ -66,7 +70,8 @@ export class SuperServicioService {
         imagen: "../assets/img/posts/pirate.png",
         fecha: "22/07/99",
         categoria: "combate",
-        id: 101
+        id: 101,
+        icono: "fas fa-skull-crossbones"
       },
       {
         titulo: "Cazafantasmas",
@@ -75,7 +80,8 @@ export class SuperServicioService {
         imagen: "../assets/img/posts/ghost.png",
         fecha: "22/07/99",
         categoria: "tecnologia",
-        id: 104
+        id: 104,
+        icono: "fas fa-robot"
       },
       {
         titulo: "Secretos de la meditación",
@@ -84,7 +90,8 @@ export class SuperServicioService {
         imagen: "../assets/img/posts/monk.png",
         fecha: "22/07/99",
         categoria: "combate",
-        id: 100
+        id: 100,
+        icono: "fas fa-skull-crossbones"
       },
       {
         titulo: "Nigromante causa el pánico",
@@ -93,7 +100,8 @@ export class SuperServicioService {
         imagen: "../assets/img/posts/wizard.png",
         fecha: "22/07/99",
         categoria: "zombies",
-        id: 105
+        id: 105,
+        icono: "fas fa-biohazard"
       },
       {
         titulo: "Vampiros!",
@@ -102,7 +110,8 @@ export class SuperServicioService {
         imagen: "../assets/img/posts/vampire.png",
         fecha: "22/07/99",
         categoria: "magia-negra",
-        id: 106
+        id: 106,
+        icono: "fas fa-hat-wizard"
       },
       {
         titulo: "Videojuegos Hong Kong!",
@@ -111,7 +120,8 @@ export class SuperServicioService {
         imagen: "../assets/img/posts/hk.png",
         fecha: "22/07/99",
         categoria: "tecnologia",
-        id: 107
+        id: 107,
+        icono: "fas fa-robot"
       },
       {
         titulo: "¡Una planta que habla!",
@@ -120,7 +130,8 @@ export class SuperServicioService {
         imagen: "../assets/img/posts/plant.png",
         fecha: "22/07/99",
         categoria: "magia-negra",
-        id: 108
+        id: 108,
+        icono: "fas fa-hat-wizard"
       },
       {
         titulo: "La guerra ha comenzado",
@@ -129,7 +140,8 @@ export class SuperServicioService {
         imagen: "../assets/img/posts/war.png",
         fecha: "22/07/99",
         categoria: "combate",
-        id: 109
+        id: 109,
+        icono: "fas fa-skull-crossbones"
       },
       {
         titulo: "Mudanzas Diplodocus",
@@ -138,7 +150,8 @@ export class SuperServicioService {
         imagen: "../assets/img/posts/diplo.png",
         fecha: "22/07/99",
         categoria: "magia-negra",
-        id: 110
+        id: 110,
+        icono: "fas fa-hat-wizard"
       }
     ];
   }

@@ -6,6 +6,7 @@ export class Post {
   fecha: string;
   categoria: string;
   id: number;
+  icono: string;
 
   constructor(
     pTitulo: string,
@@ -22,5 +23,6 @@ export class Post {
     this.fecha = pFecha;
     this.categoria = pCategoria;
     this.id = 0;
+    this.icono = "";
   }
 }

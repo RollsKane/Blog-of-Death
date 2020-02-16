@@ -1,0 +1,42 @@
+* {
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+  color: papayawhip;
+}
+
+img {
+  size: 25%;
+  margin-left: 35%;
+  margin-right: 60%;
+}
+
+.locura {
+  background-image: url(../../assets/img/pixel.gif);
+  background-size: 150%;
+  background-position: 8px -410px;
+}
+
+/*******************************************************/
+/*********************MEDIA QUERIES*********************/
+/*******************************************************/
+
+/* Esta web está hecha en desktop-first */
+
+/* Primer Breakpoint */
+/* Tablet / Pantalla Pequeña */
+
+@media (min-width: 62.75em) {
+}
+
+/* Segundo Breakpoint */
+/* Mobil grande / Tablet pequeña */
+
+@media (min-width: 48.063em) {
+}
+
+/* Tercer Breakpoint */
+/* Movil */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+}

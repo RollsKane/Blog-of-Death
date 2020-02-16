@@ -7,7 +7,16 @@ import { AppComponent } from "./app.component";
 import { BlogComponent } from "./blog/blog.component";
 import { FormularioComponent } from "./formulario/formulario.component";
 import { DetallePostComponent } from "./detalle-post/detalle-post.component";
-import { AboutComponent } from './about/about.component';
+import { AboutComponent } from "./about/about.component";
+
+/*import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";*/
+/*import {
+  faBiohazard,
+  faSkullCrossbones,
+  faRobot,
+  faDragon,
+  faHatWizard
+} from "@fortawesome/free-solid-svg-icons";*/
 
 @NgModule({
   declarations: [

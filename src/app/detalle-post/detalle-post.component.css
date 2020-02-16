@@ -1,3 +1,27 @@
 .btn {
   margin: 1em;
 }
+
+/*******************************************************/
+/*********************MEDIA QUERIES*********************/
+/*******************************************************/
+
+/* Esta web está hecha en desktop-first */
+
+/* Primer Breakpoint */
+/* Tablet / Pantalla Pequeña */
+
+@media (min-width: 62.75em) {
+}
+
+/* Segundo Breakpoint */
+/* Mobil grande / Tablet pequeña */
+
+@media (min-width: 48.063em) {
+}
+
+/* Tercer Breakpoint */
+/* Movil */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+}
