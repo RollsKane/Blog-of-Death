@@ -171,6 +171,7 @@ export class SuperServicioService {
 
       this.arrPosts.push(nuevo);
       console.log(this.arrPosts);
+      resolve(nuevo);
     });
     return prom;
   }

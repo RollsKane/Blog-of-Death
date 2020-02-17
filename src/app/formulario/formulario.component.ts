@@ -8,7 +8,7 @@ import { Post } from "../models/Post";
   selector: "app-formulario",
   templateUrl: "./formulario.component.html",
   styleUrls: ["./formulario.component.css"],
-  providers: [SuperServicioService]
+  providers: []
 })
 export class FormularioComponent implements OnInit {
   formulario: FormGroup; // es de tipo FormGroup y se tiene que importar arriba

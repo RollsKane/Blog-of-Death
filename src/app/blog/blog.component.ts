@@ -7,7 +7,7 @@ import { Post } from "../models/Post";
   selector: "app-blog",
   templateUrl: "./blog.component.html",
   styleUrls: ["./blog.component.css"],
-  providers: [SuperServicioService]
+  providers: [] // Dejo vacío el providers porque el servicio ya actúa a nivel global debido a que ya está en modo root con su decorador
 })
 export class BlogComponent implements OnInit {
   arrTodosLosPosts: Post[];
