@@ -1,6 +1,60 @@
+.locor {
+  background-image: url(../../assets/img/rain2.gif);
+}
+
 .btn {
   margin: 1em;
 }
+
+h5 {
+  text-align: center;
+  padding: 10px;
+  font-size: larger;
+  font-weight: 700;
+}
+
+.cajaImg {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  height: 700px;
+  background-image: url(../../assets/img/computer.gif);
+  color: papayawhip;
+}
+
+.cajaImg img {
+  border-radius: 10%;
+  border: 3px solid orangered;
+  margin-left: 27.5%;
+}
+
+.card-body {
+  background-color: rgba(0, 0, 0, 0.616);
+}
+
+/* TÉCNICA SECRETA DE ALINEACIÓN ABSOLUTA */
+
+/*
+.cajaImg {
+  overflow: hidden;
+  width: 200px;
+  height: 900px;
+  position: relative;
+  text-align: center;
+}
+.cajaImg img {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  border-radius: 10%;
+  border: 2px solid orangered;
+
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+*/
 
 /*******************************************************/
 /*********************MEDIA QUERIES*********************/

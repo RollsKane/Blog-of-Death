@@ -1,21 +1,25 @@
-<div class="col-12 container-fluid">
+<div class="col-12 container-fluid locor">
   <div class="row">
-    <div class="col-2 card" style="width: 5rem;">
-      <img src="{{ idPost?.imagen }}" class="card-img-top" alt="..." />
+    <div class="col-12 card cajaImg" style="width: 5rem;">
+      <h5 class="card-title">
+        {{ DetallePost?.titulo }}
+      </h5>
+      <img
+        class="card-img-top col-5"
+        src="{{ DetallePost?.imagen }}"
+        alt="{{ DetallePost?.titulo }}"
+      />
       <div class="card-body">
-        <h5 class="card-title">
-          {{ idPost?.titulo }}
-        </h5>
-        <p>{{ idPost?.texto }}</p>
-        <p>{{ idPost?.fecha }}</p>
-        <p class="card-text">{{ idPost?.categoria }}</p>
+        <p>{{ DetallePost?.texto }}</p>
+        <p>{{ DetallePost?.fecha }}</p>
+        <p class="card-text">{{ DetallePost?.categoria }}</p>
       </div>
     </div>
     <div class="row col-12">
-      <a href="#" class="btn btn-primary" [routerLink]="['/blog']">Volver</a>
-      <a href="#" class="btn btn-danger" (click)="manejarBorrado(idPost)"
-        >Eliminar Post</a
-      >
+      <button class="btn btn-primary" [routerLink]="['/blog']">Volver</button>
+      <button class="btn btn-danger" (click)="manejarBorrado(DetallePost)">
+        Eliminar Post
+      </button>
     </div>
   </div>
 </div>

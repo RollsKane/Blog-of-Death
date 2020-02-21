@@ -161,17 +161,23 @@ export class SuperServicioService {
 
     this.id++;
 
-    this.arrPosts.push(nuevo);
+    this.arrPosts.unshift(nuevo);
     console.log(this.arrPosts);
+
+    // to Keep new posts on the Local Storage
+    // window.localStorage.setItem("storeObj", JSON.stringify($event));
   }
 
   agregarPostPromise($event) {
     const prom = new Promise<Post>((resolve, reject) => {
       let nuevo = { ...$event };
 
-      this.arrPosts.push(nuevo);
+      this.arrPosts.unshift(nuevo);
       console.log(this.arrPosts);
       resolve(nuevo);
+
+      // to Keep new posts on the Local Storage
+      // window.localStorage.setItem("storeObj", JSON.stringify($event));
     });
     return prom;
   }
@@ -209,24 +215,6 @@ export class SuperServicioService {
     return prom;
   }
 
-  getByTitle(pTitle: string): Promise<Post[]> {
-    const prom = new Promise<Post[]>((resolve, reject) => {
-      const arrFiltrado = this.arrPosts.filter(item => {
-        // Filtro en minusculas, sin espacio
-        const tituloCompleto = this.eliminarDiacriticos(
-          this.eliminarEspacios(item.categoria)
-        );
-        const pTituloNew = this.eliminarDiacriticos(
-          this.eliminarEspacios(pTitle)
-        );
-
-        return tituloCompleto.toLowerCase().includes(pTituloNew.toLowerCase());
-      });
-      resolve(arrFiltrado);
-    });
-    return prom;
-  }
-
   eliminarEspacios(pCadena: string): string {
     const regex = / /gi; // reemplazar espacios con una expresión regular
     // "g" es global e "i" es insensitive (que le dan igual mayusculas o minusculas)
@@ -238,7 +226,7 @@ export class SuperServicioService {
     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
 
-  getByTitul(pTitle: string): Promise<Post[]> {
+  getByTitle(pTitle: string): Promise<Post[]> {
     const prom = new Promise<Post[]>((resolve, reject) => {
       const arrFiltrado = this.arrPosts.filter(item => {
         // Filtro en minusculas, sin espacio
@@ -260,8 +248,23 @@ export class SuperServicioService {
     for (let i = 0; i < this.arrPosts.length; i++) {
       if (this.arrPosts[i].id === pPost.id) {
         this.arrPosts.splice(i, 1);
+        // to Delete new posts on the Local Storage
+        // window.localStorage.setItem("storeObj", JSON.stringify(pPost));
       }
     }
+  }
+
+  muertePostPromise(pPost: Post): Promise<Post[]> {
+    return new Promise((resolve, reject) => {
+      for (let i = 0; i < this.arrPosts.length; i++) {
+        if (this.arrPosts[i].id === pPost.id) {
+          this.arrPosts.splice(i, 1);
+          resolve(this.arrPosts);
+        }
+      }
+    });
+    // to Keep new posts on the Local Storage
+    // window.localStorage.setItem("storeObj", JSON.stringify(pPost));
   }
 
   getByIdPromise(pId: number): Promise<Post> {

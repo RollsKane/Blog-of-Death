@@ -65,6 +65,7 @@ export class FormularioComponent implements OnInit {
     console.log(this.postNuevo);
     this.formularioEnviado = true;
     this.superServicioService.agregarPost(this.postNuevo);
+    this.router.navigate(["/blog"]);
   }
 
   emitPost($event) {

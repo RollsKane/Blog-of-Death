@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Post } from "../models/Post";
 import { SuperServicioService } from "../super-servicio.service";
 
@@ -9,41 +9,30 @@ import { SuperServicioService } from "../super-servicio.service";
   styleUrls: ["./detalle-post.component.css"]
 })
 export class DetallePostComponent implements OnInit {
-  idPost: Post;
-
-  arrTodosLosPosts: Post[];
+  DetallePost: Post;
 
   constructor(
     private activateRoute: ActivatedRoute,
-    private superServicio: SuperServicioService
+    private superServicio: SuperServicioService,
+    private router: Router
   ) {
-    this.activateRoute.params.subscribe(async params => {
-      console.log(params);
-      this.idPost = await this.superServicio.getByIdPromise(
-        parseInt(params.idPost)
-      );
-      // Devuelve los parametros variables de la url
-      console.log(this.idPost);
-    });
-    this.arrTodosLosPosts = [];
+    this.DetallePost = new Post("", "", "", "", "", "");
   }
 
   ngOnInit() {
     this.activateRoute.params.subscribe(async params => {
-      console.log(params);
-      this.idPost = await this.superServicio.getByIdPromise(
-        parseInt(params.id)
+      console.log(params.postId);
+      this.DetallePost = await this.superServicio.getByIdPromise(
+        parseInt(params.postId)
       );
       // Devuelve los parametros variables de la url
-      console.log(this.idPost);
     });
   }
 
-  manejarBorrado($event) {
-    this.arrTodosLosPosts = [];
-    this.superServicio.muertePost($event);
-    // tslint:disable-next-line: no-shadowed-variable
-    /*.then(arrPosts => {
-        this.arrTodosLosPosts = arrPosts;*/
+  async manejarBorrado($event) {
+    console.log($event);
+    await this.superServicio.muertePostPromise($event);
+
+    this.router.navigate(["/blog"]);
   }
 }

@@ -25,7 +25,10 @@
 
 <div class="body">
   <ul class="row">
-    <div class="onePost" *ngFor="let post of arrTodosLosPosts">
+    <div
+      class="onePost"
+      *ngFor="let post of arrTodosLosPosts; trackBy: trackPost"
+    >
       <li
         id="{{ post.id }}"
         class="{{ post.categoria }}"
@@ -50,9 +53,9 @@
           [routerLink]="['/detalle-post', post.id]"
           >Leer Post</a
         >
-        <a href="#" class="btn btn-danger" (click)="manejarBorrado(post)"
-          >Eliminar Post</a
-        >
+        <button class="btn btn-danger" (click)="manejarBorrado(post)">
+          Eliminar Post
+        </button>
       </div>
     </div>
   </ul>

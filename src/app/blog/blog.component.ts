@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { SuperServicioService } from "../super-servicio.service";
 import { Post } from "../models/Post";
 
@@ -16,7 +16,8 @@ export class BlogComponent implements OnInit {
 
   constructor(
     private superServicioService: SuperServicioService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.arrTodosLosPosts = [];
     this.post = new Post("", "", "", "", "", "");
@@ -41,7 +42,7 @@ export class BlogComponent implements OnInit {
   manejarTitulo($event) {
     this.arrTodosLosPosts = [];
     this.superServicioService
-      .getByTitul($event.target.value)
+      .getByTitle($event.target.value)
       // tslint:disable-next-line: no-shadowed-variable
       .then(arrPosts => {
         this.arrTodosLosPosts = arrPosts;
@@ -53,6 +54,7 @@ export class BlogComponent implements OnInit {
     this.arrTodosLosPosts = [];
 
     if ($event.target.value == "todos") {
+      this.arrTodosLosPosts = this.superServicioService.getAllPosts();
     } else {
       this.superServicioService
         .getByCathegory($event.target.value)
@@ -64,11 +66,12 @@ export class BlogComponent implements OnInit {
     }
   }
 
-  manejarBorrado($event) {
-    this.arrTodosLosPosts = [];
-    this.superServicioService.muertePost($event);
-    // tslint:disable-next-line: no-shadowed-variable
-    /*.then(arrPosts => {
-        this.arrTodosLosPosts = arrPosts;*/
+  async manejarBorrado($event) {
+    console.log($event);
+    await this.superServicioService.muertePostPromise($event);
+  }
+
+  trackPost(index, post) {
+    return post.id;
   }
 }
